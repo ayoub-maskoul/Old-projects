@@ -7,9 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
-import androidx.fragment.app.FragmentActivity
 
-class BlankFragment : Fragment() {
+class Fragment1 : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -26,10 +25,11 @@ class BlankFragment : Fragment() {
 
             val bundle = Bundle()
 
+            // sent data to another fragment From fragment
             bundle.putString("data",data)
-            val fragment2 = BlankFragment2()
+            val fragment2 = Fragment2()
             fragment2.arguments = bundle
-            fragmentManager?.beginTransaction()?.replace(R.id.holder, BlankFragment2())?.commit()
+            fragmentManager?.beginTransaction()?.replace(R.id.holder, Fragment2())?.commit()
 
         }
 

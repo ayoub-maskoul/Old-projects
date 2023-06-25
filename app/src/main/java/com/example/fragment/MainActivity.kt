@@ -7,7 +7,6 @@ import android.widget.Button
 import kotlinx.coroutines.CoroutineScope
 
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -18,25 +17,26 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        supportFragmentManager.beginTransaction().add(R.id.holder, BlankFragment()).commit()
+        // Add Fragment in activity
+        supportFragmentManager.beginTransaction().add(R.id.holder, Fragment1()).commit()
 
         var st = true
 
 
-
+        // Switch with Fragment (UI) by coroutineScope
         var cr = CoroutineScope(
             Dispatchers.Default).launch {
             for (i in 0..1000){
                     delay(100);
                     if (st ){
                        withContext(Dispatchers.Main){
-                           supportFragmentManager.beginTransaction().replace(R.id.holder, BlankFragment()).commit()
+                           supportFragmentManager.beginTransaction().replace(R.id.holder, Fragment1()).commit()
                        }
                         st = false
                     }else{
                         withContext(Dispatchers.Main) {
                             supportFragmentManager.beginTransaction()
-                                .replace(R.id.holder, BlankFragment2()).commit()
+                                .replace(R.id.holder, Fragment2()).commit()
                         }
                         st = true
                     }

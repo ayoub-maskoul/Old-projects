@@ -8,7 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 
-class BlankFragment2 : Fragment() {
+class Fragment2 : Fragment() {
 
 
     @SuppressLint("MissingInflatedId")
@@ -20,7 +20,7 @@ class BlankFragment2 : Fragment() {
         val textView :TextView = view.findViewById(R.id.res)
 
         val args = this.arguments
-
+        // Receive data
         textView.text = args?.getString("data").toString()
 
         return view
