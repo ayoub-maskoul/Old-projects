@@ -77,9 +77,20 @@ class DBTache(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null,
         values.put(COLUMN_STATUT, tache.status)
         return db.insert(TABLE_TACHE, null, values)
         }
-    fun DeleteTache(db: SQLiteDatabase, id: Int) {
+    fun deleteTache(db: SQLiteDatabase, id: Int) {
 
         db.delete(TABLE_TACHE, "id=?", arrayOf(id.toString()))
         }
+
+    fun updateTache(db: SQLiteDatabase, id: Int, tache: Taches) {
+        val values = ContentValues()
+        values.put(COLUMN_TITRE, tache.titre)
+        values.put(COLUMN_DATE, tache.date)
+        values.put(COLUMN_STATUT, tache.status)
+
+        db.update(TABLE_TACHE, values,"id=?", arrayOf(id.toString()))
+        }
+
+
 
 }

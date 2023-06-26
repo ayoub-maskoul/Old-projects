@@ -1,15 +1,16 @@
 package com.example.fragment
 
 import android.annotation.SuppressLint
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
+import androidx.appcompat.app.AppCompatActivity
 import kotlinx.coroutines.CoroutineScope
-
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -43,6 +44,15 @@ class MainActivity : AppCompatActivity() {
 
                 }
         }
+// test
+//        val thread = Thread {
+//            Thread.sleep(200)
+//            runOnUiThread {
+//
+//            }
+//        }
+//        thread.start()
+
 
         var btn = findViewById<Button>(R.id.add)
         var btn1 = findViewById<Button>(R.id.home)

@@ -1,5 +1,6 @@
 package com.example.Sqlite
 
+import android.os.AsyncTask
 import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
@@ -10,11 +11,19 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.get
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.cc205.R
+import org.json.JSONArray
+import org.json.JSONObject
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import java.io.BufferedReader
+import java.io.InputStream
+import java.io.InputStreamReader
+import java.net.URL
+import javax.net.ssl.HttpsURLConnection
 
 
 class MainActivity : AppCompatActivity() {
@@ -67,7 +76,7 @@ class MainActivity : AppCompatActivity() {
 
                                             dbTache = DBTache(this@MainActivity)
                                             val db = dbTache.writableDatabase
-                                            dbTache.DeleteTache(db,position)
+                                            dbTache.deleteTache(db,position)
                                             tacheList.removeAt(position)
 
                                             atapterTache.notifyDataSetChanged()
@@ -109,7 +118,55 @@ class MainActivity : AppCompatActivity() {
             })
         }
     }
-    fun performOptionsMenuClick(position:Int){
 
-    }
+//here use ASyncTask
+   /* inner class MatacheAsyc : AsyncTask<String?, Int?, String?>() {
+
+        override fun doInBackground(vararg params: String?): String? {
+            var data: String? = ""
+            try {
+                val url = URL("https://my-json-server.typicode.com/youssefyazidi/api3/taches")
+                val con: HttpsURLConnection = url.openConnection() as HttpsURLConnection
+                val str: InputStream = con.inputStream
+                val red = BufferedReader(InputStreamReader(str))
+                var ligne = ""
+                while (ligne != null) {
+                    ligne = red.readLine()
+                    data += ligne
+                }
+            } catch (er: Exception) {
+                er.printStackTrace()
+                Log.e("E rreur ", er.toString())
+            }
+            return data
+        }
+
+        override fun onPreExecute() {
+
+
+        }
+
+        override fun onPostExecute(s: String?) {
+
+
+            val ta: ArrayList<Taches> = ArrayList()
+            try {
+                val array = JSONArray(s)
+                for (i in 0 until array.length()) {
+                    val postjson: JSONObject = array.getJSONObject(i)
+                    val titre: String = postjson.getString("title")
+                    val id: Int = postjson.getInt("id")
+                    val date: String = postjson.getString("date")
+                    val status: String = postjson.getString("status")
+                    val t = Taches(id,titre,date,status)
+
+                    ta.add(t)
+                }
+
+            } catch (er: Exception) {
+                Log.e("Erreur ", er.toString())
+            }
+        }
+    }*/
+
 }
