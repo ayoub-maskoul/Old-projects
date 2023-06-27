@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Widget</string>
+    
+    <array name="country">
+        <item>Maroc</item>
+        <item>Algérie</item>
+        <item>Tunisie</item>
+        <item>Egypte</item>
+        <item>Qatar</item>
+    </array>
+</resources>
