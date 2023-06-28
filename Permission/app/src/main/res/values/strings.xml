@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Permission</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string-array name="nomspays">
+        <item>Le Maroc</item>
+        <item>Algérie</item>
+        <item>La Mauritanie</item>
+        <item>La Tunisie</item>
+        <item>La Libye</item>
+    </string-array>
+
+    <string-array name="capitales">
+        <item>Rabat</item>
+        <item>Alger</item>
+        <item>Nouakchott</item>
+        <item>Tunis </item>
+        <item>Tripoli</item>
+    </string-array>
+
+        <string name="desc_moro">Le Maroc ,ou le royaume du Maroc, autrefois l\'Empire chérifien, est un État unitaire régionalisé situé en Afrique du Nord. Son régime politique est une monarchie constitutionnelle. Sa capitale est Rabat et sa plus grande ville Casablanca.</string>
+        <string name="desc_algr">L Algérie    est un pays d\’Afrique du Nord faisant partie du Maghreb et, depuis 1962, formé en État nommé en forme longue, République algérienne démocratique et populaire, abrégée en RADP  dont la capitale est Alger.</string>
+        <string name="desc_murti">La Mauritanie, ou République islamique de Mauritanie (forme longue) est un pays du Maghreb situé dans le nord-ouest de l\’Afrique. Elle est située sur la côte nord-ouest du continent et se situe entre 15 et 27 degrés de latitude nord et 5 et 17 degrés de longitude ouest.</string>
+        <string name="desc_tuni">La Tunisie , en forme longue la République tunisienne , héritière de l\’antique Carthage, est un État d\’Afrique du Nord bordé au nord et à l\’est par la mer Méditerranée (1 148 kilomètres de côtes), à l\’ouest par l\’Algérie avec 965 kilomètres de frontière commune et au sud-sud-est par la Libye avec 459 kilomètres de frontière. Sa capitale Tunis est située dans le nord-est du pays, au fond du golfe du même nom. Plus de 30 % de la superficie du territoire est occupée par le désert du Sahara, le reste étant constitué de régions montagneuses et de plaines fertiles.</string>
+        <string name="desc_lib">La Libye, en forme longue l\’État de Libye est un pays d\’Afrique du Nord faisant partie du Maghreb. Elle est bordée au nord par la mer de Libye (mer Méditerranée), au nord-ouest par la Tunisie, à l\’ouest par l\’Algérie, au sud-ouest par le Niger, au sud-sud-est par le Tchad, au sud-est par le Soudan et à l\’est par l\’ Égypte. Elle s\’étend sur 1 759 540 kilomètres carrés, ce qui la place au quatrième rang africain et au dix-huitième rang mondial. Sa population est estimée entre 6 et 8 millions d\’habitants.</string>
+</resources>
