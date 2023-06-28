@@ -46,8 +46,8 @@ class DBTache(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null,
 
 
     @SuppressLint("Range")
-    fun getAllTache(db: SQLiteDatabase): ArrayList<Taches> {
-        val taches = ArrayList<Taches>()
+    fun getAllTache(db: SQLiteDatabase): ArrayList<Tache> {
+        val taches = ArrayList<Tache>()
         val selectQuery = "SELECT * FROM $TABLE_TACHE"
         val cursor: Cursor? = db.rawQuery(selectQuery, null)
         cursor?.let {
@@ -57,7 +57,7 @@ class DBTache(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null,
                     val titre = it.getString(it.getColumnIndex(COLUMN_TITRE))
                     val date = it.getString(it.getColumnIndex(COLUMN_DATE))
                     val statut = it.getString(it.getColumnIndex(COLUMN_STATUT))
-                    val tache = Taches(id, titre, date, statut)
+                    val tache = Tache(id, titre, date, statut)
                     taches.add(tache)
                 } while (it.moveToNext())
             }
@@ -70,7 +70,7 @@ class DBTache(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null,
         db.delete(TABLE_TACHE, null, null)
     }
 
-    fun addTache(db: SQLiteDatabase, tache: Taches): Long {
+    fun addTache(db: SQLiteDatabase, tache: Tache): Long {
         val values = ContentValues()
         values.put(COLUMN_TITRE, tache.titre)
         values.put(COLUMN_DATE, tache.date)
@@ -82,7 +82,7 @@ class DBTache(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null,
         db.delete(TABLE_TACHE, "id=?", arrayOf(id.toString()))
         }
 
-    fun updateTache(db: SQLiteDatabase, id: Int, tache: Taches) {
+    fun updateTache(db: SQLiteDatabase, id: Int, tache: Tache) {
         val values = ContentValues()
         values.put(COLUMN_TITRE, tache.titre)
         values.put(COLUMN_DATE, tache.date)

@@ -7,7 +7,7 @@ import java.util.ArrayList
 
 interface JsonPlaceholderApi {
     @GET("taches")
-    fun getAllTache() : Call<ArrayList<Taches>>
+    fun getAllTache() : Call<ArrayList<Tache>>
 
 
 

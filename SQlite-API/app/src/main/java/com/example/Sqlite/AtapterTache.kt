@@ -8,7 +8,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.cc205.R
 
-class AtapterTache(val list:ArrayList<Taches>,
+class AtapterTache(val list:ArrayList<Tache>,
                    private var optionsMenuClickListener: OptionsMenuClickListener):
     RecyclerView.Adapter<AtapterTache.ViewHolderTache>() {
      class ViewHolderTache(val view:View):RecyclerView.ViewHolder(view){

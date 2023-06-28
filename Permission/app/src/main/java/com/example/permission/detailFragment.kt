@@ -7,7 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import com.example.efm205.R
+import com.example.permission.R
 
 @SuppressLint("ValidFragment")
 class detailFragment(var nom: String, var des: String) : Fragment() {
